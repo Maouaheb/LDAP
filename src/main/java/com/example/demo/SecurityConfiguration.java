@@ -22,13 +22,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .ldapAuthentication()
-                .userDnPatterns("uid={0},ou=People")
+                .userDnPatterns("uid={0},ou=People,dc=unamurcs,dc=be")
                 .groupSearchBase("ou=Groups")
                 .contextSource()
-                .url("ldap://ldap.unamurcs.be:389/dc=unamurcs,dc=be")
+                .url("ldap://ldap.unamurcs.be:389")
                 .and()
                 .passwordCompare()
-                .passwordEncoder(new BCryptPasswordEncoder())
                 .passwordAttribute("userPassword");
     }
 }
