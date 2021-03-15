@@ -28,6 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .url("ldap://ldap.unamurcs.be:389")
                 .and()
                 .passwordCompare()
+                .passwordEncoder(new BCryptPasswordEncoder())
                 .passwordAttribute("userPassword");
     }
 }

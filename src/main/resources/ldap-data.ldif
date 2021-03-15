@@ -1,20 +1,12 @@
-dn: dc=unamurcs,dc=be
-objectclass: top
-objectclass: domain
-objectclass: extensibleObject
-dc: unamurcs
-
-dn: ou=People,dc=unamurcs,dc=be
-objectclass: top
-objectclass: organizationalUnit
-ou: People
-
+#!RESULT OK
+#!CONNECTION ldap://ldap.unamurcs.be:389
+#!DATE 2021-03-15T09:57:29.215
 dn: uid=zorglub,ou=People,dc=unamurcs,dc=be
 objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
-cn: admin
+cn: Zorglub
 sn: zorglub
 uid: zorglub
-userPassword: donthackme
+userPassword: {bcrypt}$2y$12$AJE.drY8fPE3Xuj3ue.J2ev2dSOtnJXlSKTkWk.0OUPHZoIccfyxu
